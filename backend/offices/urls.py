@@ -8,5 +8,10 @@ urlpatterns = [
         "regions/$",
         views.RegionView.as_view(),
         name="regions-list",
+    ),
+    url(
+        "offices/$",
+        views.RegionView.as_view(),
+        name="regions-list",
     )
 ]
