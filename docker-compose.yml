@@ -8,3 +8,23 @@ services:
       - ./backend/:/usr/src/app
     ports:
       - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=HKHKFSA
+      - DB_DATABASE=obn_dev
+      - DB_USER=obn_app
+      - DB_PASSWORD=obn_app
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DATABASE=postgres
+  db:
+    image: postgis/postgis:12-3.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=obn_app
+      - POSTGRES_PASSWORD=obn_app
+      - POSTGRES_DB=obn_dev
+
+volumes:
+  postgres_data:
