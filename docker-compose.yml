@@ -1,6 +1,16 @@
 version: "3.6"
 
 services:
+  client:
+    build: ./client
+    volumes:
+      - "./client:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    ports:
+      - 3007:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
   backend:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
