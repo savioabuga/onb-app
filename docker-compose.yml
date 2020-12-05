@@ -11,4 +11,20 @@ services:
     environment:
       - DEBUG=1
       - SECRET_KEY=HKHKFSA
-    
+      - DB_ENGINE=django.contrib.backends.postgresql
+      - DB_DATABASE=obn_dev
+      - DB_USER=obn_app
+      - DB_PASSWORD=obn_app
+      - DB_HOST=db
+      - DB_PORT=5432
+  db:
+    image: postgis/postgis:12-3.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=obn_app
+      - POSTGRES_PASSWORD=obn_app
+      - POSTGRES_DB=obn_dev
+
+volumes:
+  postgres_data:
