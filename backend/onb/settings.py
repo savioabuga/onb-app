@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'onb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get("django.contrib.gis.db.backends.postgis", "django.db.backends.sqlite3"),
+        'ENGINE': "django.contrib.gis.db.backends.postgis",
         'NAME': os.environ.get("DB_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
         'USER': os.environ.get("DB_USER", "user"),
         "PASSWORD": os.environ.get("DB_PASSWORD", "password"),

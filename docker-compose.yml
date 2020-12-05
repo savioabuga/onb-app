@@ -16,6 +16,7 @@ services:
       - DB_PASSWORD=obn_app
       - DB_HOST=db
       - DB_PORT=5432
+      - DATABASE=postgres
   db:
     image: postgis/postgis:12-3.0-alpine
     volumes:
