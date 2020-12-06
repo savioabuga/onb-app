@@ -9,7 +9,7 @@ class RegionView(APIView):
     def get(self, request, format=None):
         features = []
         for region in Region.objects.all():
-            features.append({"type": "Feature", "geometry": json.loads(region.polygon.json), "properties": {"name": region.name }})
+            features.append({"type": "Feature", "geometry": json.loads(region.polygon.json), "properties": {"Name": region.name, "Number of Staff": region.staff_number }})
 
         return Response(
             {
@@ -26,7 +26,7 @@ class OfficeView(APIView):
     def get(self, request, format=None):
         features = []
         for office in Office.objects.all():
-            features.append({"type": "Feature", "geometry": office.point.json, "properties": {"Name": office.name, "Level": Office.Level.labels.get(office.level), "Lat": office.point.coords[1], "Lon": office.point.coords[0]}})
+            features.append({"type": "Feature", "geometry": office.point.json, "properties": {"Name": office.name, "Level": Office.Level.labels.get(office.level), "Lat": office.point.coords[1], "Lon": office.point.coords[0], "Number of Staff": office.staff_number}})
 
         return Response(
             {
