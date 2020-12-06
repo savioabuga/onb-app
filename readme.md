@@ -14,7 +14,9 @@ This is a SPA app build using React JS as the frontend and a django backend to b
 
 4. Docker and docker-compose for containerization od the app
 
-5. Kepler.gl for the Map
+5. [Kepler.gl](https://kepler.gl/) for the Map
+
+6. [QGIS](https://www.qgis.org/) for creating the regions and offices map layers.
 
 ## Hosted app
 You can view the hosted app here: https://savioabuga.github.io/onb-app/
