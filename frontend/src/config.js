@@ -4,107 +4,7 @@ const config = {
         "visState": {
             "filters": [],
             "layers": [{
-                "id": "3t8wkt",
-                "type": "point",
-                "config": {
-                    "dataId": "ngo-x-offices",
-                    "label": "Point",
-                    "color": [255, 203, 153],
-                    "columns": {
-                        "lat": "lat",
-                        "lng": "lon",
-                        "altitude": null
-                    },
-                    "isVisible": false,
-                    "visConfig": {
-                        "radius": 10,
-                        "fixedRadius": false,
-                        "opacity": 0.8,
-                        "outline": false,
-                        "thickness": 2,
-                        "strokeColor": null,
-                        "colorRange": {
-                            "name": "Global Warming",
-                            "type": "sequential",
-                            "category": "Uber",
-                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
-                        },
-                        "strokeColorRange": {
-                            "name": "Global Warming",
-                            "type": "sequential",
-                            "category": "Uber",
-                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
-                        },
-                        "radiusRange": [0, 50],
-                        "filled": true
-                    },
-                    "hidden": false,
-                    "textLabel": [{
-                        "field": null,
-                        "color": [255, 255, 255],
-                        "size": 18,
-                        "offset": [0, 0],
-                        "anchor": "start",
-                        "alignment": "center"
-                    }]
-                },
-                "visualChannels": {
-                    "colorField": null,
-                    "colorScale": "quantile",
-                    "strokeColorField": null,
-                    "strokeColorScale": "quantile",
-                    "sizeField": null,
-                    "sizeScale": "linear"
-                }
-            }, {
-                "type": "point",
-                "config": {
-                    "dataId": "ngo-x-offices",
-                    "label": "NGO X Offices",
-                    "color": [203, 56, 11],
-                    "columns": {
-                        "lat": "Lat",
-                        "lng": "Lon",
-                        "altitude": null
-                    },
-                    "isVisible": true,
-                    "visConfig": {
-                        "radius": 20.1,
-                        "fixedRadius": false,
-                        "opacity": 0.98,
-                        "outline": false,
-                        "thickness": 0.5,
-                        "strokeColor": [137, 218, 193],
-                        "colorRange": {
-                            "name": "Global Warming",
-                            "type": "sequential",
-                            "category": "Uber",
-                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
-                        },
-                        "strokeColorRange": {
-                            "name": "Global Warming",
-                            "type": "sequential",
-                            "category": "Uber",
-                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
-                        },
-                        "radiusRange": [0, 50],
-                        "filled": true
-                    },
-                    "hidden": false,
-                    "textLabel": []
-                },
-                "visualChannels": {
-                    "colorField": {
-                        "name": "name",
-                        "type": "string"
-                    },
-                    "colorScale": "ordinal",
-                    "strokeColorField": null,
-                    "strokeColorScale": "quantile",
-                    "sizeField": null,
-                    "sizeScale": "linear"
-                }
-            }, {
+                "id": "roa0loi",
                 "type": "geojson",
                 "config": {
                     "dataId": "ngo-x-regions",
@@ -135,7 +35,7 @@ const config = {
                         "sizeRange": [0, 10],
                         "radiusRange": [0, 50],
                         "heightRange": [0, 500],
-                        "elevationScale": 5,
+                        "elevationScale": 1.9,
                         "stroked": true,
                         "filled": true,
                         "enable3d": false,
@@ -153,7 +53,7 @@ const config = {
                 },
                 "visualChannels": {
                     "colorField": {
-                        "name": "name",
+                        "name": "Name",
                         "type": "string"
                     },
                     "colorScale": "ordinal",
@@ -161,24 +61,88 @@ const config = {
                     "sizeScale": "linear",
                     "strokeColorField": null,
                     "strokeColorScale": "quantile",
-                    "heightField": null,
+                    "heightField": {
+                        "name": "Number of Staff",
+                        "type": "integer"
+                    },
                     "heightScale": "linear",
                     "radiusField": null,
                     "radiusScale": "linear"
+                }
+            }, {
+                "id": "ec4qqqm",
+                "type": "point",
+                "config": {
+                    "dataId": "ngo-x-offices",
+                    "label": "NGO X Offices",
+                    "color": [231, 83, 31],
+                    "columns": {
+                        "lat": "Lat",
+                        "lng": "Lon",
+                        "altitude": null
+                    },
+                    "isVisible": true,
+                    "visConfig": {
+                        "radius": 17.5,
+                        "fixedRadius": false,
+                        "opacity": 0.98,
+                        "outline": false,
+                        "thickness": 0.5,
+                        "strokeColor": [137, 218, 193],
+                        "colorRange": {
+                            "name": "Global Warming",
+                            "type": "sequential",
+                            "category": "Uber",
+                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
+                        },
+                        "strokeColorRange": {
+                            "name": "Global Warming",
+                            "type": "sequential",
+                            "category": "Uber",
+                            "colors": ["#5A1846", "#900C3F", "#C70039", "#E3611C", "#F1920E", "#FFC300"]
+                        },
+                        "radiusRange": [0, 57],
+                        "filled": true
+                    },
+                    "hidden": false,
+                    "textLabel": []
+                },
+                "visualChannels": {
+                    "colorField": null,
+                    "colorScale": "quantile",
+                    "strokeColorField": null,
+                    "strokeColorScale": "quantile",
+                    "sizeField": {
+                        "name": "Number of Staff",
+                        "type": "integer"
+                    },
+                    "sizeScale": "sqrt"
                 }
             }],
             "interactionConfig": {
                 "tooltip": {
                     "fieldsToShow": {
                         "ngo-x-offices": [{
-                            "name": "name",
+                            "name": "Name",
                             "format": null
                         }, {
-                            "name": "level",
+                            "name": "Level",
+                            "format": null
+                        }, {
+                            "name": "Lat",
+                            "format": null
+                        }, {
+                            "name": "Lon",
+                            "format": null
+                        }, {
+                            "name": "Number of Staff",
                             "format": null
                         }],
                         "ngo-x-regions": [{
-                            "name": "name",
+                            "name": "Name",
+                            "format": null
+                        }, {
+                            "name": "Number of Staff",
                             "format": null
                         }]
                     },
@@ -207,10 +171,10 @@ const config = {
         "mapState": {
             "bearing": 0,
             "dragRotate": false,
-            "latitude": 1.142714972,
-            "longitude": 34.41393654560247,
+            "latitude": -0.11898088754316526,
+            "longitude": 36.20120774513305,
             "pitch": 0,
-            "zoom": 5.5,
+            "zoom": 5.725054616739361,
             "isSplit": false
         },
         "mapStyle": {
@@ -232,3 +196,5 @@ const config = {
 }
 
 export default config;
+
+
