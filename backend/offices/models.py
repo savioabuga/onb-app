@@ -10,6 +10,7 @@ class Office(models.Model):
     name = models.CharField(max_length=100)
     level = models.CharField(max_length=40, choices=Level.choices)
     point = models.PointField()
+    staff_number = models.IntegerField(null=True)
 
     def __str__(self):
         return self.name
@@ -18,6 +19,7 @@ class Office(models.Model):
 class Region(models.Model):
     name = models.CharField(max_length=100)
     polygon = models.PolygonField()
+    staff_number = models.IntegerField(null=True)
 
     def __str__(self):
         return self.name
