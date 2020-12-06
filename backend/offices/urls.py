@@ -11,7 +11,7 @@ urlpatterns = [
     ),
     url(
         "offices/$",
-        views.RegionView.as_view(),
+        views.OfficeView.as_view(),
         name="regions-list",
     )
 ]

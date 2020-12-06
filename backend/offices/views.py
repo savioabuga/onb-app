@@ -1,3 +1,4 @@
+import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Region, Office
@@ -8,7 +9,7 @@ class RegionView(APIView):
     def get(self, request, format=None):
         features = []
         for region in Region.objects.all():
-            features.append({"geometry": region.polygon.json, "properties": {"name": region.name }})
+            features.append({"type": "Feature", "geometry": json.loads(region.polygon.json), "properties": {"name": region.name }})
 
         return Response(
             {
@@ -25,7 +26,7 @@ class OfficeView(APIView):
     def get(self, request, format=None):
         features = []
         for office in Office.objects.all():
-            features.append({"geometry": office.point.json, "properties": {"name": office.name, "level": office.level.label}})
+            features.append({"type": "Feature", "geometry": office.point.json, "properties": {"Name": office.name, "Level": Office.Level.labels.get(office.level), "Lat": office.point.coords[1], "Lon": office.point.coords[0]}})
 
         return Response(
             {
